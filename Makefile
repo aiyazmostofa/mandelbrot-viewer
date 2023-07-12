@@ -5,3 +5,9 @@ init:
 
 main:
 	cd build; make; ./mandelbrot-viewer
+
+win-init:
+	mkdir build -p; cd build; cmake ../ -G "MinGW Makefiles"
+
+win:
+	cd build; make; ./mandelbrot-viewer.exe
