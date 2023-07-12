@@ -75,7 +75,7 @@ int main()
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	// Create GLFW Window
-	GLFWwindow* window = glfwCreateWindow(800, 600, "Deez Fractals", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(800, 600, "Mandelbrot Viewer", NULL, NULL);
 	if (window == NULL)
 	{
 		std::cout << "Failed to create GLFW window" << std::endl;
