@@ -6,6 +6,7 @@ Make sure you have CMake, GNU Make, and a C++ compiler installed.
 
 To build this project, clone this repository and run these commands in the project directory.
 #+BEGIN_SRC bash
+  git submodule update --init
   make init # Setup CMake and symlink the compile_commands.json to the root.
   make # Run the Makefile in the build directory and run the program.
 #+END_SRC
