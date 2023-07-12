@@ -1,13 +1,16 @@
 default: main
+
 init:
+ifeq ($(OS),Windows_NT)
+	mkdir build -p; cd build; cmake ../ -G "MinGW Makefiles"
+else
 	mkdir build -p; cd build; cmake ../
-	[ -f compile_commands.json ] || ln -s $(PWD)/build/compile_commands.json compile_commands.json
+endif
+	[ -f compile_commands.json ] || cp ./build/compile_commands.json compile_commands.json
 
 main:
-	cd build; make; ./mandelbrot-viewer
-
-win-init:
-	mkdir build -p; cd build; cmake ../ -G "MinGW Makefiles"
-
-win:
+ifeq ($(OS),Windows_NT)
 	cd build; make; ./mandelbrot-viewer.exe
+else
+	cd build; make; ./mandelbrot-viewer
+endif
