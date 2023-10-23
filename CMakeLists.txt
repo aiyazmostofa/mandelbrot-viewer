@@ -10,8 +10,6 @@ add_subdirectory(glfw)
 add_library(glad STATIC glad/src/glad.c)
 target_include_directories(glad PRIVATE glad/include)
 
-set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++ -static")
-
 add_executable(${PROJECT_NAME} WIN32 main.cpp)
 target_include_directories(${PROJECT_NAME} PRIVATE glad/include)
 target_link_libraries(${PROJECT_NAME} glfw glad)
