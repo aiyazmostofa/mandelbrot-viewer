@@ -9,8 +9,11 @@ If you're on Windows, you will have to run the commands below with a bash emulat
 To build this project, clone this repository and run these commands in the project directory.
 #+BEGIN_SRC bash
   git submodule update --init
-  make init # Run CMake and symlink the compile_commands.json to the root.
-  make # Run the Makefile in the build directory and run the program.
+  mkdir build
+  cd build
+  cmake ../
+  make
+  ./mandelbrot-viewer
 #+END_SRC
 
 ** License
